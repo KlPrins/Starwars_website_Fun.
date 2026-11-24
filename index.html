@@ -6,6 +6,49 @@
    
     
     <style>
+/* STARTSEITE */
+
+#start {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.85)
+    ), url("weltraum.jpg");
+
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+#start h1 {
+    font-size: 85px;
+    color: yellow;
+    text-shadow: 0 0 25px gold;
+}
+
+#start p {
+    font-size: 23px;
+    color: white;
+}
+
+#start button {
+    background: gold;
+    color: black;
+    padding: 16px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#start button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px gold;
+}
+
 /* PLANETEN BEREICH */
 
 .planet-karten {
@@ -278,9 +321,9 @@ nav a:hover {
         <h1>STAR WARS</h1>
         <p>Willkommen in einer weit, weit entfernten Galaxis.</p>
 
-        <button onclick="begrussen()">
-            Mehr erfahren
-        </button>
+       <button onclick="location.href='#filme'">
+    GALAXIS ENTDECKEN
+</button>
     </section>
 
     
@@ -662,4 +705,3 @@ function infoAnzeigen() {
 
 
 </html>
-
