@@ -3,8 +3,112 @@
 <html>
 <head>
     <title>Star Wars</title>
-
+   
+    
     <style>
+/* PLANETEN BEREICH */
+
+.planet-karten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.planet-karte {
+    background: #1a1a1a;
+    border: 1px solid #665500;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.planet-karte:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px gold;
+}
+
+.planet-karte img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.planet-text {
+    padding: 18px;
+}
+
+.planet-text h3 {
+    color: yellow;
+    font-size: 23px;
+}
+
+.planet-text p {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.planet-art {
+    color: #c9a900;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+    /* FILM-BEREICH */
+
+.film-karten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.film-karte {
+    background: #1a1a1a;
+    border: 1px solid #665500;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.film-karte:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px gold;
+}
+
+.film-karte img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.film-text {
+    padding: 18px;
+}
+
+.film-text h3 {
+    color: yellow;
+    font-size: 21px;
+}
+
+.film-text p {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.film-jahr {
+    color: #c9a900;
+    font-size: 13px;
+    font-weight: bold;
+}
         body {
             background-color: #000000;
             color: white;
@@ -67,7 +171,7 @@ nav a:hover {
 }
 
 .karte:hover {
-    transform: scale(0.9);
+    transform: scale(1.5);
     box-shadow: 0px 0px 20px blue;
 }
 
@@ -347,15 +451,163 @@ nav a:hover {
 
 </section>
 
-    <section id="filme">
-        <h2>Filme</h2>
-        <p>Alle Star-Wars-Filme im Überblick.</p>
-    </section>
+  <section id="filme">
 
-    <section id="planeten">
-        <h2>Planeten</h2>
-        <p>Entdecke die verschiedenen Planeten.</p>
-    </section>
+    <h2>STAR WARS FILME</h2>
+
+    <p>Alle neun Episoden der Skywalker-Saga.</p>
+
+    <div class="film-karten">
+
+        <div class="film-karte">
+            <img src="episode1.jpg" alt="Episode 1">
+            <div class="film-text">
+                <div class="film-jahr">1999</div>
+                <h3>Episode I – Die dunkle Bedrohung</h3>
+                <p>Qui-Gon Jinn und Obi-Wan Kenobi entdecken den jungen Anakin Skywalker.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode2.jpg" alt="Episode 2">
+            <div class="film-text">
+                <div class="film-jahr">2002</div>
+                <h3>Episode II – Angriff der Klonkrieger</h3>
+                <p>Die Galaxis steht kurz vor einem großen Krieg. Die Klonkriege beginnen.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode3.jpg" alt="Episode 3">
+            <div class="film-text">
+                <div class="film-jahr">2005</div>
+                <h3>Episode III – Die Rache der Sith</h3>
+                <p>Anakin Skywalker fällt auf die dunkle Seite und wird zu Darth Vader.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode4.jpg" alt="Episode 4">
+            <div class="film-text">
+                <div class="film-jahr">1977</div>
+                <h3>Episode IV – Eine neue Hoffnung</h3>
+                <p>Luke Skywalker schließt sich der Rebellion gegen das Imperium an.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode5.jpg" alt="Episode 5">
+            <div class="film-text">
+                <div class="film-jahr">1980</div>
+                <h3>Episode V – Das Imperium schlägt zurück</h3>
+                <p>Luke trainiert bei Yoda und stellt sich Darth Vader.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode6.jpg" alt="Episode 6">
+            <div class="film-text">
+                <div class="film-jahr">1983</div>
+                <h3>Episode VI – Die Rückkehr der Jedi-Ritter</h3>
+                <p>Luke versucht, seinen Vater zurück auf die helle Seite zu bringen.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode7.jpg" alt="Episode 7">
+            <div class="film-text">
+                <div class="film-jahr">2015</div>
+                <h3>Episode VII – Das Erwachen der Macht</h3>
+                <p>Eine neue Bedrohung entsteht und Rey entdeckt ihre Verbindung zur Macht.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode8.jpg" alt="Episode 8">
+            <div class="film-text">
+                <div class="film-jahr">2017</div>
+                <h3>Episode VIII – Die letzten Jedi</h3>
+                <p>Rey sucht Luke Skywalker und versucht, die Geheimnisse der Jedi zu verstehen.</p>
+            </div>
+        </div>
+
+        <div class="film-karte">
+            <img src="episode9.jpg" alt="Episode 9">
+            <div class="film-text">
+                <div class="film-jahr">2019</div>
+                <h3>Episode IX – Der Aufstieg Skywalkers</h3>
+                <p>Der letzte Kampf zwischen der Ersten Ordnung und dem Widerstand beginnt.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+   <section id="planeten">
+
+    <h2>STAR WARS PLANETEN</h2>
+    <p>Entdecke die faszinierenden Welten der Galaxis.</p>
+
+    <div class="planet-karten">
+
+        <div class="planet-karte">
+            <img src="tatooine.jpg" alt="Tatooine">
+            <div class="planet-text">
+                <div class="planet-art">WÜSTENPLANET</div>
+                <h3>Tatooine</h3>
+                <p>Ein trockener Wüstenplanet mit zwei Sonnen. Hier wachsen Anakin und Luke Skywalker auf.</p>
+            </div>
+        </div>
+
+        <div class="planet-karte">
+            <img src="coruscant.jpg" alt="Coruscant">
+            <div class="planet-text">
+                <div class="planet-art">STADTPLANET</div>
+                <h3>Coruscant</h3>
+                <p>Ein riesiger Stadtplanet und das politische Zentrum der Galaktischen Republik.</p>
+            </div>
+        </div>
+
+        <div class="planet-karte">
+            <img src="mustafar.jpg" alt="Mustafar">
+            <div class="planet-text">
+                <div class="planet-art">LAVAPLANET</div>
+                <h3>Mustafar</h3>
+                <p>Ein gefährlicher Planet voller Lava. Hier kämpfen Obi-Wan und Anakin gegeneinander.</p>
+            </div>
+        </div>
+
+        <div class="planet-karte">
+            <img src="hoth.jpg" alt="Hoth">
+            <div class="planet-text">
+                <div class="planet-art">EISPLANET</div>
+                <h3>Hoth</h3>
+                <p>Ein eisiger Planet, auf dem die Rebellen eine geheime Basis errichten.</p>
+            </div>
+        </div>
+
+        <div class="planet-karte">
+            <img src="endor.jpg" alt="Endor">
+            <div class="planet-text">
+                <div class="planet-art">WALDMOND</div>
+                <h3>Endor</h3>
+                <p>Ein bewaldeter Mond, auf dem die Rebellen gegen das Imperium kämpfen.</p>
+            </div>
+        </div>
+
+        <div class="planet-karte">
+            <img src="naboo.jpg" alt="Naboo">
+            <div class="planet-text">
+                <div class="planet-art">GRÜNER PLANET</div>
+                <h3>Naboo</h3>
+                <p>Ein wunderschöner Planet mit grünen Landschaften und Seen. Die Heimat von Padmé Amidala.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
     <section id="kontakt">
         <h2>Kontakt</h2>
@@ -410,3 +662,4 @@ function infoAnzeigen() {
 
 
 </html>
+
