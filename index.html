@@ -13,7 +13,7 @@
         }
 
         h1 {
-            color: red;
+            color: yellow;
             font-size: 65px;
         }
 
@@ -23,29 +23,390 @@
 
         button {
             background-color: blue;
-            color: black;
+            color: rgb(0, 0, 0);
             padding: 15px;
             border: none;
             border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
         }
+
+
+ 
+nav {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(255, 255, 0);
+    text-decoration: none;
+    margin: 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+.karten {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.karte {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 12px;
+    width: 220px;
+    transition: 0.6s;
+}
+
+.karte:hover {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 20px blue;
+}
+
+.karte img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.karte h3 {
+    color: yellow;
+}
+
+.karte p {
+    font-size: 16px;
+}
+
+#suche {
+    margin-bottom: 30px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid yellow;
+}
+
+#suche {
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+/* Star Wars Episoden */
+
+.episoden {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+.episode-karte {
+    background: linear-gradient(145deg, #202020, #080808);
+    border: 1px solid #665500;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.episode-karte:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.35);
+    border-color: yellow;
+}
+
+.episode-karte img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.episode-inhalt {
+    padding: 20px;
+}
+
+.episode-inhalt h3 {
+    color: yellow;
+    font-size: 21px;
+    margin-top: 0;
+}
+
+.episode-inhalt p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.episoden-nummer {
+    color: #d6b800;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
     </style>
+
+
 </head>
 
 <body>
 
-    <h1>STAR WARS</h1>
+    <nav>
+        <a href="#start">Startseite</a>
+        <a href="#charaktere">Charaktere</a>
+        <a href="#filme">Filme</a>
+        <a href="#planeten">Planeten</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
 
-    <p>Willkommen in einer weit, weit entfernten Galaxis.</p>
+    <section id="start">
+        <h1>STAR WARS</h1>
+        <p>Willkommen in einer weit, weit entfernten Galaxis.</p>
 
-    <button onclick="begruessen()">
-    Mehr erfahren
-</button>
-<script>
-    function begruessen() {
-        alert("Galaxis betreten!");
+        <button onclick="begrussen()">
+            Mehr erfahren
+        </button>
+    </section>
+
+    
+<section id="charaktere">
+
+    <h2>Bekannte Charaktere</h2>
+
+<input
+    type="text"
+    id="suche"
+    placeholder="Charakter suchen..."
+    onkeyup="charakterSuchen()"
+>
+
+    <div class="karten">
+
+        <div class="karte">
+            <img src="vader.jpg" alt="Darth Vader">
+            <h3>Darth Vader</h3>
+            <p>Der dunkle Lord der Sith.</p>
+        </div>
+
+        <div class="karte">
+            <img src="luke.jpg" alt="Luke Skywalker">
+            <h3>Luke Skywalker</h3>
+            <p>Ein mächtiger Jedi.</p>
+        </div>
+
+        <div class="karte">
+            <img src="yoda.jpg" alt="Yoda">
+            <h3>Yoda</h3>
+            <p>Ein weiser Jedi-Meister.</p>
+        </div>
+
+    </div>
+
+</section>
+<section id="charaktere">
+
+    <h1> </h1>
+
+    <div class="karten">
+
+        <div class="karte">
+            <img src="anikanskywalker.jpg" alt="anikanskywalker">
+            <h3>Anikan Skywalker </h3>
+            <p>Der noch nicht der dunklen seite verfallene Jedi-Ritter</p>
+        </div>
+
+        <div class="karte">
+            <img src="asoka.jpg" alt="Asoka">
+            <h3>Asoka Tano </h3>
+            <p>Die ehmalige Schülerin von Anikan </p>
+        </div>
+
+        <div class="karte">
+            <img src="obiwan.jpg" alt="obiwan">
+            <h3>Obiwan</h3>
+            <p>Ein mächtiger Jedi-Meister der den Dunklen Lord 2 mal besigte  </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="wissen">
+
+    <h2>Star Wars Wissen</h2>
+
+    <button onclick="infoAnzeigen()">
+        Mehr erfahren
+    </button>
+
+    <div id="info" style="display: none;">
+
+        <div class="episoden">
+
+            <div class="episode-karte">
+                <img src="episode1.jpg" alt="Episode I">
+                <div class="episode-inhalt">
+                    <div class="episoden-nummer">EPISODE I</div>
+                    <h3>Die dunkle Bedrohung</h3>
+                    <p>
+                        Die Jedi Qui-Gon Jinn und Obi-Wan Kenobi
+                        sollen den Planeten Naboo vor einer Handelsblockade
+                        retten. Dabei treffen sie auf den jungen Anakin
+                        Skywalker, der außergewöhnlich stark in der Macht ist.
+                        Gleichzeitig taucht der Sith Darth Maul auf.
+                    </p>
+                </div>
+            </div>
+
+            <div class="episode-karte">
+                <img src="episode2.jpg" alt="Episode II">
+                <div class="episode-inhalt">
+                    <div class="episoden-nummer">EPISODE II</div>
+                    <h3>Angriff der Klonkrieger</h3>
+                    <p>
+                        Zehn Jahre später ist Anakin ein Jedi-Schüler
+                        von Obi-Wan. Er verliebt sich in Padmé Amidala.
+                        Währenddessen entdeckt Obi-Wan eine riesige
+                        Klonarmee. Die Klonkriege beginnen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="episode-karte">
+                <img src="episode3.jpg" alt="Episode III">
+                <div class="episode-inhalt">
+                    <div class="episoden-nummer">EPISODE III</div>
+                    <h3>Die Rache der Sith</h3>
+                    <p>
+                        Palpatine manipuliert Anakin immer stärker.
+                        Er verspricht ihm, Padmé retten zu können.
+                        Anakin schließt sich den Sith an und wird zu
+                        Darth Vader. Die Jedi werden fast vollständig
+                        vernichtet.
+                    </p>
+                </div>
+            </div>
+
+            <div class="episode-karte">
+                <img src="episode4.jpg" alt="Episode IV">
+                <div class="episode-inhalt">
+                    <div class="episoden-nummer">EPISODE IV</div>
+                    <h3>Eine neue Hoffnung</h3>
+                    <p>
+                        Luke Skywalker lebt auf Tatooine.
+                        Zusammen mit Obi-Wan, Han Solo und Chewbacca
+                        kämpft er gegen das Imperium. Schließlich
+                        gelingt es ihm, den Todesstern zu zerstören.
+                    </p>
+                </div>
+            </div>
+
+            <div class="episode-karte">
+                <img src="episode5.jpg" alt="Episode V">
+                <div class="episode-inhalt">
+                    <div class="episoden-nummer">EPISODE V</div>
+                    <h3>Das Imperium schlägt zurück</h3>
+                    <p>
+                        Das Imperium greift die Rebellen auf Hoth an.
+                        Luke trainiert bei Meister Yoda. Später stellt
+                        er sich Darth Vader und erfährt eine schockierende
+                        Wahrheit: Vader ist sein Vater.
+                    </p>
+                </div>
+            </div>
+
+            <div class="episode-karte">
+                <img src="episode6.jpg" alt="Episode VI">
+                <div class="episode-inhalt">
+                    <div class="episoden-nummer">EPISODE VI</div>
+                    <h3>Die Rückkehr der Jedi-Ritter</h3>
+                    <p>
+                        Luke versucht, seinen Vater auf die helle Seite
+                        zurückzubringen. Währenddessen planen die Rebellen
+                        einen Angriff auf den Todesstern. Vader rettet
+                        schließlich Luke und besiegt gemeinsam mit ihm
+                        den Imperator.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="filme">
+        <h2>Filme</h2>
+        <p>Alle Star-Wars-Filme im Überblick.</p>
+    </section>
+
+    <section id="planeten">
+        <h2>Planeten</h2>
+        <p>Entdecke die verschiedenen Planeten.</p>
+    </section>
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Hier findest du Kontaktinformationen.</p>
+    </section>
+
+    <script>
+        function begrussen() {
+            alert("Galaxis betreten!");
+        }
+       
+function charakterSuchen() {
+
+    let eingabe = document.getElementById("suche").value.toLowerCase();
+
+    let karten = document.querySelectorAll(".karte");
+
+    karten.forEach(function(karte) {
+
+        let name = karte.querySelector("h3").textContent.toLowerCase();
+
+        if (name.includes(eingabe)) {
+            karte.style.display = "block";
+        } else {
+            karte.style.display = "none";
+        }
+
+    });
+
+}
+ 
+
+
+function infoAnzeigen() {
+
+    let text = document.getElementById("info");
+
+    if (text.style.display === "none") {
+        text.style.display = "block";
+    } else {
+        text.style.display = "none";
     }
-</script>
+
+}
+
+
+
+    </script>
+
 </body>
+
+
+
 </html>
